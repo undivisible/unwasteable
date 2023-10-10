@@ -115,7 +115,7 @@ a:hover {
     opacity: 0;
 }
 
-#restaurant, #groceries, #text1, #text2, #text3 { 
+.restaurant, .groceries, .text1, .text2, .text3 { 
     opacity: 0; 
     transition: all 1s ease;
     animation: rise 3s forwards ease;
@@ -124,7 +124,7 @@ a:hover {
     flex-direction: row;
 }
 
-#centered, #restaurant, #groceries, #text1, #text2,#text3 {
+#centered, .restaurant, .groceries, .text1, .text2,.text3 {
     display: flex;
     align-items: center;
     justify-content: center;
