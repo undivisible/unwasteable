@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <title>unwasteable</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+                body {background-color: #2b3440;}
+                #restaurant, #groceries {color: #2b3440;}
+                #fade {animation-delay: 2s;}
+                #groceries {animation-delay: 2.2s;}
+                #restaurant {animation-delay: 2.4s;}
+
+                /*#groceries:hover #restaurant, #restaurant:hover #groceries {
+                    mix-blend-mode: soft-light;
+                }
+
+                #groceries:hover + .background, #restaurant:hover + .background {
+                    opacity: 0.3;
+                }*/
+        </style>
+    </head>
+    <body>
+        <!--<img class="background" src="https://www.wallpapermania.eu/download/2020-04/10389/Delicious-fruits-on-background-Vitamin-part-of-life_3840x2160.jpg"/>-->
+        <div id="centered">
+            <div id="unwasteable">unwasteable</div>
+            <div id="fade"></div>
+            <a id="restaurant" href="javascript:void(0);" onclick="groceries()">groceries</a>
+            <a id="groceries" href="javascript:void(0);" onclick="restaurant()">restaurant</a>
+        </div>        
+        <script>
+            function animateAndRedirect(destination) {
+                    const element = document.getElementById('fade');
+                    const element2 = document.getElementById('unwasteable');
+                    const element3 = document.getElementById('groceries');
+                    const element4 = document.getElementById('restaurant');
+                    element2.style.opacity = "0";
+                    element3.style.animation = "fadeo 1s ease-in forwards";
+                    element4.style.animation = "fadeo 1s ease-in forwards 0.2s";
+                    element.style.animation = "fadeo 3s ease-in forwards 1.2s";
+
+                    setTimeout(() => {
+                            window.location = destination;
+                    }, 4200);
+            }
+
+            function groceries() {
+                    animateAndRedirect("groceries.html");
+            }
+
+            function restaurant() {
+                    animateAndRedirect("restaurant.html");
+            }
+        </script>
+    </body>
+</html>

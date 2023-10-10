@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <title>groceries | unwasteable</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+                body {background-color: #2b3440;}
+                #text1, #text2, #text3 {color: #eceff4;}
+                #text1 {animation-delay: 1.0s;}
+                #text2 {animation-delay: 1.2s;}
+                #text3 {animation-delay: 1.4s;}
+        </style>
+    <body>
+        <div class="centered" id="centered">
+            <a id="text1" href="javascript:void(0);" onclick="aldi()">aldi</a>
+            <a id="text2" href="javascript:void(0);" onclick="woolies()">woolies</a>
+            <a id="text3" href="javascript:void(0);" onclick="coles()">coles</a>
+        </div>
+    </body>
+    <script>
+        function animateAndRedirect(destination) {
+                const centered = document.getElementById("centered");
+                centered.style.animation = "fall 3s ease-in forwards";
+                setTimeout(() => {
+                        window.location = destination;  
+                }, 3000);
+        }
+
+        function aldi() {
+                animateAndRedirect("aldi.html");
+        }
+        
+        function woolies() {
+                animateAndRedirect("woolies.html");
+        }
+
+        function coles() {
+                animateAndRedirect("coles.html");
+        }
+    </script>
+</head>
+</html>
