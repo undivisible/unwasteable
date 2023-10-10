@@ -7,7 +7,7 @@ body, html {
 
 a {transition: all 1s ease;}
 
-a:hover {
+a:hover, .text1:hover, .text2:hover, .text3:hover, .groceries:hover, .restaurant:hover {
     text-decoration: underline;
     padding: 20px;
     font-size: xx-large;
