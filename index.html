@@ -4,6 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <title>unwasteable</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600&display=swap" rel="stylesheet">
@@ -12,8 +13,15 @@
                 body {background-color: #2b3440;}
                 #restaurant, #groceries {color: #2b3440;}
                 #fade {animation-delay: 2s;}
-                #groceries {animation-delay: 2.2s;}
-                #restaurant {animation-delay: 2.4s;}
+                #groceries {
+                    animation-delay: 2.2s;
+                    padding: 20px; 
+                    z-index: 1;
+                }
+                #restaurant {
+                    animation-delay: 2.4s; 
+                    z-index: 2;
+                }
 
                 /*#groceries:hover #restaurant, #restaurant:hover #groceries {
                     mix-blend-mode: soft-light;
@@ -25,7 +33,7 @@
         </style>
     </head>
     <body>
-        <!--<img class="background" src="https://www.wallpapermania.eu/download/2020-04/10389/Delicious-fruits-on-background-Vitamin-part-of-life_3840x2160.jpg"/>-->
+        <img class="background" id="back" src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JvY2VyeXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"/>
         <div id="centered">
             <div id="unwasteable">unwasteable</div>
             <div id="fade"></div>
@@ -55,6 +63,17 @@
             function restaurant() {
                     animateAndRedirect("restaurant.html");
             }
+
+            const button = document.getElementById('restaurant');
+            const back = document.getElementById('back');
+
+            button.addEventListener("mouseover", function(){
+                back.style.opacity = 0.2;
+            });
+
+            button.addEventListener("mouseout", function(){
+                back.style.opacity = 0;
+            });
         </script>
     </body>
 </html>
